@@ -1,0 +1,6 @@
+oucfly:
+  thread: 4
+  limit:
+    size: 50
+  mode: "all"
+
