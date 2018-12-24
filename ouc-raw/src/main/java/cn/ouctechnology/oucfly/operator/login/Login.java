@@ -1,7 +1,6 @@
 package cn.ouctechnology.oucfly.operator.login;
 
 import cn.ouctechnology.oucfly.exception.OucException;
-import cn.ouctechnology.oucfly.http.OkHttpUtil;
 import cn.ouctechnology.oucfly.operator.Operator;
 import cn.ouctechnology.oucfly.result.Result;
 import com.alibaba.fastjson.JSON;
@@ -38,24 +37,24 @@ public class Login extends Operator<String> {
         //获取sessionId
         String username = userName;
         String password = passWord;
-        oucFly.getOkHttpUtil().get(host + "cas/login.action");
-        //读取cookie
-        List<Cookie> cookies = oucFly.getOkHttpUtil().getOkCookie().getCookieStore().get(host.substring(7, host.length() - 1));
-        if (cookies == null || cookies.size() <= 0) throw new OucException("can get the cookie");
-        String sessionId = cookies.get(0).value();
-        logger.debug("get sessionId: {}", sessionId);
-        //加密
-        username = encodeBase64((username + ";;" + sessionId));
-        password = getTripleMD5(password, "");
-        //设置参数
-        LoginParams params = LoginParams.builder()
-                ._u(username)
-                ._p(password)
-                .randnumber("")
-                .isPasswordPolicy("1")
-                .build();
         //执行登陆操作
         try {
+            oucFly.getOkHttpUtil().get(host + "cas/login.action");
+            //读取cookie
+            List<Cookie> cookies = oucFly.getOkHttpUtil().getOkCookie().getCookieStore().get(host.substring(7, host.length() - 1));
+            if (cookies == null || cookies.size() <= 0) throw new OucException("can get the cookie");
+            String sessionId = cookies.get(0).value();
+            logger.debug("get sessionId: {}", sessionId);
+            //加密
+            username = encodeBase64((username + ";;" + sessionId));
+            password = getTripleMD5(password, "");
+            //设置参数
+            LoginParams params = LoginParams.builder()
+                    ._u(username)
+                    ._p(password)
+                    .randnumber("")
+                    .isPasswordPolicy("1")
+                    .build();
             String content = oucFly.getOkHttpUtil().post(host + "cas/logon.action", params);
             logger.trace("get the response: {}", content);
             JSONObject jsonObject = JSON.parseObject(content);
@@ -68,6 +67,9 @@ public class Login extends Operator<String> {
         } catch (JSONException e) {
             logger.error("the response format is error", e);
             return Result.fail("the response format is error: " + e);
+        } catch (Throwable e) {
+            logger.error("error: {}", e.getMessage(), e);
+            return Result.fail("error: " + e);
         }
     }
 }

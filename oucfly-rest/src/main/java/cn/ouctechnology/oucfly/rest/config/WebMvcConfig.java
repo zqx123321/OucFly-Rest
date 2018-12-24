@@ -49,7 +49,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**")
                 .excludePathPatterns(Arrays.asList("/login", "/docs.html", "/webjars/**",
-                        "/js/**", "/v2/**"));
+                        "/js/**", "/v2/**", " /n/build/index.html"));
     }
 
 

@@ -63,9 +63,9 @@ public class OucFly {
         Result<String> res = this.run(login, Host.JWGL_OUC_EDU_CN.getValue());
         if (!res.isSuccess()) return res;
         hostSet.addHost(Host.JWGL_OUC_EDU_CN);
-        res = this.run(login, Host.JWGL_2_OUC_EDU_CN.getValue());
-        if (res.isSuccess()) hostSet.addHost(Host.JWGL_2_OUC_EDU_CN);
         if (Objects.equals("all", mode)) {
+            res = this.run(login, Host.JWGL_2_OUC_EDU_CN.getValue());
+            if (res.isSuccess()) hostSet.addHost(Host.JWGL_2_OUC_EDU_CN);
             res = this.run(login, Host.I_222_195_158_206.getValue());
             if (res.isSuccess()) hostSet.addHost(Host.I_222_195_158_206);
             res = this.run(login, Host.I_222_195_158_225.getValue());

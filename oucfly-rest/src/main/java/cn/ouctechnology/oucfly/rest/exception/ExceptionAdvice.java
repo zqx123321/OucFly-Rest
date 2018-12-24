@@ -53,6 +53,12 @@ public class ExceptionAdvice {
         return Result.fail("未知错误");
     }
 
+    @ExceptionHandler(Throwable.class)
+    public Result handleException(Throwable e) {
+        logger.error(e.getMessage(), e);
+        return Result.fail("未知错误");
+    }
+
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public Result handleException(HttpRequestMethodNotSupportedException e) {
         logger.error(e.getMessage(), e);
