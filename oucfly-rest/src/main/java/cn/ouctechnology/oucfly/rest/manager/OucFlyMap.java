@@ -22,6 +22,7 @@ import java.util.Set;
 @ConfigurationProperties(prefix = "oucfly.limit")
 public class OucFlyMap {
 
+
     class FlyTime {
         OucFly oucFly;
         long time;
@@ -70,6 +71,10 @@ public class OucFlyMap {
         }
     }
 
+    public boolean containsKey(String token) {
+        return oucFlyMap.containsKey(token);
+    }
+
     public int getTime() {
         return time;
     }
@@ -85,4 +90,6 @@ public class OucFlyMap {
     public void setSize(int size) {
         this.size = size;
     }
+
+
 }

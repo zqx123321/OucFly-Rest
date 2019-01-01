@@ -5,13 +5,17 @@ import cn.ouctechnology.oucfly.operator.Operator;
 import cn.ouctechnology.oucfly.operator.XnXq;
 import cn.ouctechnology.oucfly.operator.coin.Coin;
 import cn.ouctechnology.oucfly.operator.coin.CoinClass;
+import cn.ouctechnology.oucfly.operator.coin.CoinClassEntity;
+import cn.ouctechnology.oucfly.operator.coin.CoinEntity;
 import cn.ouctechnology.oucfly.operator.dept.Dept;
 import cn.ouctechnology.oucfly.operator.dept.DeptFilter;
 import cn.ouctechnology.oucfly.operator.exam.Exam;
 import cn.ouctechnology.oucfly.operator.grade.GradeDetail;
 import cn.ouctechnology.oucfly.operator.grade.GradeScore;
+import cn.ouctechnology.oucfly.operator.grade.GradeScoreEntity;
 import cn.ouctechnology.oucfly.operator.order.ClassOrder;
 import cn.ouctechnology.oucfly.operator.order.MajorOrder;
+import cn.ouctechnology.oucfly.operator.order.OrderEntity;
 import cn.ouctechnology.oucfly.operator.query.Query;
 import cn.ouctechnology.oucfly.operator.student.*;
 import cn.ouctechnology.oucfly.operator.table.ClassTable;
@@ -32,6 +36,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
  * @program: oucfly-rest
@@ -57,7 +62,7 @@ public class OucFlyController {
             @ApiImplicitParam(name = "password", value = "教务处密码", required = true, dataType = "String")
     })
     @RequestMapping("/login")
-    public Result login(String username, String password) {
+    public Result login(@NotNull String username, @NotNull String password) {
         return oucFlyService.login(username, password);
     }
 
@@ -136,8 +141,14 @@ public class OucFlyController {
     @RequestMapping("/coin/class")
     public Result coinClass(@OucFlyAttribute OucFly oucFly, @NotNull String classCode,
                             @NotNull Integer xn, @NotNull @Max(2) @Min(0) Integer xq) {
-        Operator operator = new CoinClass(classCode, new XnXq(xn, XnXq.Xq.values()[xq]));
-        return oucFly.run(operator);
+        CoinClass operator = new CoinClass(classCode, new XnXq(xn, XnXq.Xq.values()[xq]));
+        Result<CoinClassEntity> res = oucFly.run(operator);
+        if (res.isSuccess()) {
+            CoinClassEntity content = res.getContent();
+            List<CoinEntity> coins = content.getData();
+            coins.sort((o1, o2) -> o2.getCoin() - o1.getCoin());
+        }
+        return res;
     }
 
     @ApiOperation(value = "获取院系列表", notes = "获取院系列表")
@@ -267,8 +278,12 @@ public class OucFlyController {
     @RequestMapping("/order/class")
     public Result orderClass(@OucFlyAttribute OucFly oucFly, @NotNull String classCode,
                              @NotNull Integer xn, @NotNull @Max(2) @Min(0) Integer xq) {
-        Operator operator = new ClassOrder(new XnXq(xn, XnXq.Xq.values()[xq]), classCode);
-        return oucFly.run(operator);
+        ClassOrder operator = new ClassOrder(new XnXq(xn, XnXq.Xq.values()[xq]), classCode);
+        Result<OrderEntity> result = oucFly.run(operator);
+        OrderEntity content = result.getContent();
+        List<GradeScoreEntity> data = content.getData();
+        data.sort(((o1, o2) -> (int) (o2.getGrade() - o1.getGrade())));
+        return result;
     }
 
     @ApiOperation(value = "获取班级排名", notes = "获取班级排名")
@@ -293,11 +308,15 @@ public class OucFlyController {
         else if (deptName != null) deptFilter.filterDept(deptName);
         if (majorCode != null) deptFilter.setMajor(majorCode);
         else if (majorName != null) deptFilter.filterMajor(majorName);
-        Operator operator;
+        MajorOrder operator;
         if (year != null) operator = new MajorOrder(deptFilter, year);
         else if (xn == null || xq == null) operator = new MajorOrder(deptFilter);
         else operator = new MajorOrder(deptFilter, new XnXq(xn, XnXq.Xq.values()[xq]));
-        return oucFly.run(operator);
+        Result<OrderEntity> result = oucFly.run(operator);
+        OrderEntity content = result.getContent();
+        List<GradeScoreEntity> data = content.getData();
+        data.sort(((o1, o2) -> (int) (o2.getGrade() - o1.getGrade())));
+        return result;
     }
 
     @ApiOperation(value = "查询课程信息", notes = "查询课程信息")
@@ -340,4 +359,8 @@ public class OucFlyController {
         return studentFilter;
     }
 
+    @RequestMapping("/check")
+    public Result check(@NotNull String token) {
+        return oucFlyService.check(token);
+    }
 }

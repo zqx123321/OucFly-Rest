@@ -8,7 +8,6 @@ import cn.ouctechnology.oucfly.operator.dept.DeptFilter;
 import cn.ouctechnology.oucfly.result.Result;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -133,7 +132,7 @@ public class Student extends Operator<List<StudentEntity>> {
      */
     private void runFullScan(ScanHandler handler) {
         //获取大一的年级号
-        int year = Calendar.getInstance().get(Calendar.YEAR);
+        int year = 2018;
         //大四到大一
         for (int i = year - 3; i <= year; i++) {
             logger.info("scan the grade of {}", i);

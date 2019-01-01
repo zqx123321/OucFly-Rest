@@ -7,10 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Objects;
 
 /**
  * @program: oucfly
@@ -29,18 +27,18 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE,PUT");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
         String uri = request.getRequestURI();
         logger.info("get request: {}", uri);
-        Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            String name = cookie.getName();
-            if (Objects.equals("token", name)) {
-                String uuid = cookie.getValue();
-                OucFly oucFly = oucFlyMap.getOucFly(uuid);
-                if (oucFly != null) {
-                    request.setAttribute("oucFly", oucFly);
-                    return true;
-                }
+        String token = request.getParameter("token");
+        if (token != null) {
+            OucFly oucFly = oucFlyMap.getOucFly(token);
+            if (oucFly != null) {
+                request.setAttribute("oucFly", oucFly);
+                return true;
             }
         }
         throw new LoginException("非法的访问请求: " + uri);

@@ -27,7 +27,6 @@ public class OucFlyService {
     private int thread = 4;
 
 
-
     public Result login(String username, String password) {
         OucFly oucFly = new OucFly(username, password, thread, mode);
         Result result = oucFly.init();
@@ -52,5 +51,11 @@ public class OucFlyService {
 
     public int getThread() {
         return thread;
+    }
+
+    public Result check(String token) {
+        OucFly oucFly = oucFlyMap.getOucFly(token);
+        if (oucFly != null) return Result.success();
+        return Result.fail();
     }
 }

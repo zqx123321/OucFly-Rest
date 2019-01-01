@@ -3,4 +3,5 @@ oucfly:
   limit:
     size: 50
   mode: "all"
-
+server:
+  port: 7777

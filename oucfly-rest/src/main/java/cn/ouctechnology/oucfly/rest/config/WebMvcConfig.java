@@ -1,5 +1,6 @@
 package cn.ouctechnology.oucfly.rest.config;
 
+import cn.ouctechnology.oucfly.rest.Interceptor.AjaxInterceptor;
 import cn.ouctechnology.oucfly.rest.Interceptor.LoginInterceptor;
 import cn.ouctechnology.oucfly.rest.Interceptor.OucFlyAttributeMethodResolver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,8 +49,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**")
-                .excludePathPatterns(Arrays.asList("/login", "/docs.html", "/webjars/**",
+                .excludePathPatterns(Arrays.asList("/login", "/check", "/docs.html", "/webjars/**",
                         "/js/**", "/v2/**", " /n/build/index.html"));
+        registry.addInterceptor(new AjaxInterceptor());
     }
 
 

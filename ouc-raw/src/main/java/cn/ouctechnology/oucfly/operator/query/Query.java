@@ -1,7 +1,6 @@
 package cn.ouctechnology.oucfly.operator.query;
 
 import cn.ouctechnology.oucfly.exception.OucException;
-import cn.ouctechnology.oucfly.http.OkHttpUtil;
 import cn.ouctechnology.oucfly.operator.Operator;
 import cn.ouctechnology.oucfly.operator.XnXq;
 import cn.ouctechnology.oucfly.result.Result;
@@ -56,6 +55,7 @@ public class Query extends Operator<List<QueryEntity>> {
 
     /**
      * 设置当前页
+     *
      * @param page
      * @return
      */
@@ -75,7 +75,7 @@ public class Query extends Operator<List<QueryEntity>> {
                 .build();
         String url;
         String refer;
-        String paramStr = params.toString();
+        String paramStr = params.toString() + "&initQry=0";
         if (currentPage != null) {
             url = host + "taglib/DataTable.jsp?currPageCount=" + currentPage;
             refer = host + "taglib/DataTable.jsp?tableId=6146";
@@ -100,6 +100,7 @@ public class Query extends Operator<List<QueryEntity>> {
             Elements counts = document.select("[name=qdrs]");
             Elements times = document.select("[name=sksj]");
             Elements places = document.select("[name=skdd]");
+            Elements names = document.select("[name=kc]");
 
             List<QueryEntity> queryEntities = new ArrayList<>();
 
@@ -113,6 +114,7 @@ public class Query extends Operator<List<QueryEntity>> {
                 }
                 QueryEntity queryEntity = new QueryEntity();
                 queryEntity.setClassCode(code.text());
+                queryEntity.setClassName(names.get(i).text());
                 queryEntity.setClassSchool(schools.get(i).text());
                 queryEntity.setAllPeople(Integer.parseInt(alls.get(i).text()));
                 queryEntity.setClassHour(Integer.parseInt(hours.get(i).text()));
