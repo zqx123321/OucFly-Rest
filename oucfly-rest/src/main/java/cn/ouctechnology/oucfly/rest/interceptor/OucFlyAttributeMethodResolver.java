@@ -1,4 +1,4 @@
-package cn.ouctechnology.oucfly.rest.Interceptor;
+package cn.ouctechnology.oucfly.rest.interceptor;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;

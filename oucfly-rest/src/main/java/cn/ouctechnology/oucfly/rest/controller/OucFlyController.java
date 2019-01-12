@@ -19,7 +19,7 @@ import cn.ouctechnology.oucfly.operator.order.OrderEntity;
 import cn.ouctechnology.oucfly.operator.query.Query;
 import cn.ouctechnology.oucfly.operator.student.*;
 import cn.ouctechnology.oucfly.operator.table.ClassTable;
-import cn.ouctechnology.oucfly.rest.Interceptor.OucFlyAttribute;
+import cn.ouctechnology.oucfly.rest.interceptor.OucFlyAttribute;
 import cn.ouctechnology.oucfly.rest.exception.OucFlyRestException;
 import cn.ouctechnology.oucfly.rest.service.OucFlyService;
 import cn.ouctechnology.oucfly.result.Result;

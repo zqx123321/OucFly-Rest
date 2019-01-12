@@ -1,4 +1,4 @@
-package cn.ouctechnology.oucfly.rest.Interceptor;
+package cn.ouctechnology.oucfly.rest.interceptor;
 
 import cn.ouctechnology.oucfly.core.OucFly;
 import cn.ouctechnology.oucfly.rest.exception.LoginException;

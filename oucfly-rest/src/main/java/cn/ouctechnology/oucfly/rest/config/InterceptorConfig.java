@@ -1,6 +1,6 @@
 package cn.ouctechnology.oucfly.rest.config;
 
-import cn.ouctechnology.oucfly.rest.Interceptor.LoginInterceptor;
+import cn.ouctechnology.oucfly.rest.interceptor.LoginInterceptor;
 import cn.ouctechnology.oucfly.rest.manager.OucFlyMap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
