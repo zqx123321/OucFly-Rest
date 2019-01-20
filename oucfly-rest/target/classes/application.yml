@@ -4,7 +4,7 @@ oucfly:
     size: 50
   mode: "school"
   codes:
-  - "15020031106"
+  - "15020034106"
 server:
   port: 7777
 

@@ -1,0 +1,46 @@
+{
+  "groups": [
+    {
+      "name": "oucfly",
+      "type": "cn.ouctechnology.oucfly.rest.service.OucFlyService",
+      "sourceType": "cn.ouctechnology.oucfly.rest.service.OucFlyService"
+    },
+    {
+      "name": "oucfly.limit",
+      "type": "cn.ouctechnology.oucfly.rest.manager.OucFlyMap",
+      "sourceType": "cn.ouctechnology.oucfly.rest.manager.OucFlyMap"
+    }
+  ],
+  "properties": [
+    {
+      "name": "oucfly.codes",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "cn.ouctechnology.oucfly.rest.service.OucFlyService"
+    },
+    {
+      "name": "oucfly.limit.size",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.ouctechnology.oucfly.rest.manager.OucFlyMap",
+      "defaultValue": 50
+    },
+    {
+      "name": "oucfly.limit.time",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.ouctechnology.oucfly.rest.manager.OucFlyMap",
+      "defaultValue": 0
+    },
+    {
+      "name": "oucfly.mode",
+      "type": "java.lang.String",
+      "sourceType": "cn.ouctechnology.oucfly.rest.service.OucFlyService",
+      "defaultValue": "all"
+    },
+    {
+      "name": "oucfly.thread",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.ouctechnology.oucfly.rest.service.OucFlyService",
+      "defaultValue": 4
+    }
+  ],
+  "hints": []
+}

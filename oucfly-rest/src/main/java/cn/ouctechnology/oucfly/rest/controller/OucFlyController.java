@@ -19,8 +19,8 @@ import cn.ouctechnology.oucfly.operator.order.OrderEntity;
 import cn.ouctechnology.oucfly.operator.query.Query;
 import cn.ouctechnology.oucfly.operator.student.*;
 import cn.ouctechnology.oucfly.operator.table.ClassTable;
-import cn.ouctechnology.oucfly.rest.interceptor.OucFlyAttribute;
 import cn.ouctechnology.oucfly.rest.exception.OucFlyRestException;
+import cn.ouctechnology.oucfly.rest.interceptor.OucFlyAttribute;
 import cn.ouctechnology.oucfly.rest.service.OucFlyService;
 import cn.ouctechnology.oucfly.result.Result;
 import io.swagger.annotations.Api;
@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -282,7 +283,7 @@ public class OucFlyController {
         Result<OrderEntity> result = oucFly.run(operator);
         OrderEntity content = result.getContent();
         List<GradeScoreEntity> data = content.getData();
-        data.sort(((o1, o2) -> (int) (o2.getGrade() - o1.getGrade())));
+        data.sort((o1, o2) -> -Double.compare(o1.getGrade(), o2.getGrade()));
         return result;
     }
 
@@ -315,7 +316,7 @@ public class OucFlyController {
         Result<OrderEntity> result = oucFly.run(operator);
         OrderEntity content = result.getContent();
         List<GradeScoreEntity> data = content.getData();
-        data.sort(((o1, o2) -> (int) (o2.getGrade() - o1.getGrade())));
+        data.sort((o1, o2) -> -Double.compare(o1.getGrade(), o2.getGrade()));
         return result;
     }
 
