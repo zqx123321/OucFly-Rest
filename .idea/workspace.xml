@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb3b259b-75d3-4804-a67c-dd551b0b0314" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest/controller/OucFlyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest/controller/OucFlyController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/oucfly-rest/target/" />
@@ -24,7 +24,7 @@
     <session id="-17721224">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="24" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.23" value="3" />
           <entry key="project.open.time.24" value="2" />
@@ -36,11 +36,12 @@
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -48,7 +49,7 @@
           <entry key="class" value="28" />
           <entry key="css" value="1" />
           <entry key="html" value="2" />
-          <entry key="java" value="168" />
+          <entry key="java" value="169" />
           <entry key="log" value="5" />
           <entry key="png" value="2" />
           <entry key="pom" value="2" />
@@ -63,7 +64,7 @@
           <entry key="CSS" value="1" />
           <entry key="HTML" value="2" />
           <entry key="Image" value="2" />
-          <entry key="JAVA" value="168" />
+          <entry key="JAVA" value="169" />
           <entry key="Log" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Properties" value="5" />
@@ -74,7 +75,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="java" value="6054" />
+          <entry key="java" value="6113" />
           <entry key="properties" value="236" />
           <entry key="xml" value="224" />
           <entry key="yml" value="199" />
@@ -82,7 +83,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6054" />
+          <entry key="JAVA" value="6113" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="Properties" value="236" />
           <entry key="XML" value="224" />
@@ -94,33 +95,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oucfly-rest/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrderDirectly.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="2250">
+              <caret line="105" column="22" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrderDirectly.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-105">
-              <caret line="105" column="22" lean-forward="true" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrder.java">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrderForEach.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1143">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="169">
+              <caret line="72" column="83" selection-start-line="72" selection-start-column="83" selection-end-line="72" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -128,8 +120,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest/controller/OucFlyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5925">
-              <caret line="274" column="19" selection-start-line="274" selection-start-column="19" selection-end-line="274" selection-end-column="19" />
+            <state relative-caret-position="84">
+              <caret line="336" column="16" lean-forward="true" selection-start-line="336" selection-start-column="16" selection-end-line="336" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/query/Query.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="31" column="14" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -207,6 +211,7 @@
       <find>exam</find>
       <find>quer</find>
       <find>currentPage</find>
+      <find>query</find>
     </findStrings>
     <replaceStrings>
       <replace>userCode</replace>
@@ -258,11 +263,11 @@
         <option value="$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest/config/WebMvcConfig.java" />
         <option value="$PROJECT_DIR$/oucfly-rest/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest/interceptor/LogInterceptor.java" />
-        <option value="$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest/controller/OucFlyController.java" />
         <option value="$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest/service/OucFlyService.java" />
         <option value="$PROJECT_DIR$/oucfly-rest/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrderForEach.java" />
         <option value="$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrderDirectly.java" />
+        <option value="$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest/controller/OucFlyController.java" />
       </list>
     </option>
   </component>
@@ -313,7 +318,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="628" />
     <option name="width" value="683" />
     <option name="height" value="728" />
@@ -324,6 +329,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -451,17 +457,10 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="oucfly" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oucfly" type="462c0819:PsiDirectoryNode" />
-              <item name="oucfly-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -472,7 +471,7 @@
     <property name="SearchEverywhereHistoryKey" value="org.apache.catalina.util.ParameterMap&#9;PSI&#9;JAVA://org.apache.catalina.util.ParameterMap&#10;cn.ouctechnology.oucfly.rest.controller&#9;PSI&#9;JAVA://cn.ouctechnology.oucfly.rest.controller.OucFlyController" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548065692460" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548079220824" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest" />
     <property name="last_opened_file_path" value="D:/杂乱文件第七季/滑动积木块问题/【αβγ队】--滑动积木块游戏/【αβγ队】问题求解的源代码/Search" />
@@ -601,7 +600,8 @@
       <workItem from="1547887214252" duration="116000" />
       <workItem from="1547950484557" duration="4399000" />
       <workItem from="1547961498810" duration="760000" />
-      <workItem from="1548061674753" duration="1552000" />
+      <workItem from="1548061674753" duration="1621000" />
+      <workItem from="1548078076931" duration="1147000" />
     </task>
     <servers />
   </component>
@@ -614,12 +614,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98195000" />
+    <option name="totallyTimeSpent" value="99411000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32299545" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19440243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -632,12 +632,12 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32935154" />
       <window_info anchor="bottom" id="Run Dashboard" order="4" weight="0.6740614" />
-      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.17235495" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.42078364" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.23890784" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.0" />
       <window_info anchor="bottom" id="Tool Output" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Statistic" order="13" weight="0.22998296" />
@@ -795,13 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/query/Query.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/oucfly-rest/src/test/java/cn/ouctechnology/oucfly/rest/OucflyRestApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -937,17 +930,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2550">
           <caret line="129" column="25" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
-          <folding>
-            <element signature="e#4161#4162#0" expanded="true" />
-            <element signature="e#4211#4212#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest/controller/OucFlyController.java">
+    <entry file="file://$PROJECT_DIR$/oucfly-rest/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5925">
-          <caret line="274" column="19" selection-start-line="274" selection-start-column="19" selection-end-line="274" selection-end-column="19" />
+        <state relative-caret-position="225">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrderDirectly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="105" column="22" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -990,29 +986,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oucfly-rest/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrder.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/query/Query.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="375">
+          <caret line="31" column="14" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrderDirectly.java">
+    <entry file="file://$PROJECT_DIR$/oucfly-rest/src/main/java/cn/ouctechnology/oucfly/rest/controller/OucFlyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="105" column="22" lean-forward="true" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
+        <state relative-caret-position="84">
+          <caret line="336" column="16" lean-forward="true" selection-start-line="336" selection-start-column="16" selection-end-line="336" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrderForEach.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1143">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="169">
+          <caret line="72" column="83" selection-start-line="72" selection-start-column="83" selection-end-line="72" selection-end-column="83" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ouc-raw/src/main/java/cn/ouctechnology/oucfly/operator/order/ClassOrder.java">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

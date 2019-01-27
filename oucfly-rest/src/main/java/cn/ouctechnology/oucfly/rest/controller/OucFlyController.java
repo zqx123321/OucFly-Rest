@@ -36,7 +36,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -335,6 +334,8 @@ public class OucFlyController {
     public Result query(@OucFlyAttribute OucFly oucFly, @NotNull Integer xn,
                         @NotNull @Max(2) @Min(0) Integer xq, @NotNull String className,
                         @NotNull @Max(2) @Min(0) Integer type, Integer page) {
+        //fixme 传值混乱
+        if (type == 1 || type == 2) type = 3 - type;
         Query operator = new Query(new XnXq(xn, XnXq.Xq.values()[xq]),
                 Query.ClassType.values()[type], className);
         if (page != null) operator.setCurrentPage(page);
